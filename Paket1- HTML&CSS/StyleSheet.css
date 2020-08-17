@@ -1,0 +1,57 @@
+a {
+    color: #00b5ad;
+}
+
+a.disabled {
+    color: gray;
+}
+
+.nav-item {
+  border-right: 1px solid silver;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.nav-item:last-child {
+  border: none;
+}
+
+.navbar {
+  border-bottom: 1px solid grey;
+}
+
+#upper-img{
+    height: 300px;
+    width: 100%;
+}
+
+
+#lower-img{
+  height: 150px;
+  width: 100%;
+}
+
+.top-buffer {
+  margin-top:35px;
+}
+
+.btn-info {
+    margin-bottom: 10px;
+    background-color: #00b5ad;
+    border-color: #00b5ad;
+}
+
+.footer{
+  border-top: 1px solid grey;
+  margin-top: 10px;
+}
+
+#avaiableS{
+  top: 30px;
+  margin-bottom: 30px;
+}
+
+fieldset {
+  border: 1px groove black !important;
+  padding: 0 15px 15px 15px !important;
+}
