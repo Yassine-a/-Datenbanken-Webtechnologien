@@ -1,0 +1,2 @@
+CREATE FUNCTION get_user_role (id TINYTEXT) RETURNS INT RETURN
+  (SELECT * FROM Benutzer);

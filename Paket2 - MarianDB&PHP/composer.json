@@ -1,0 +1,7 @@
+{
+    "name": "ya7167s/m2",
+    "require": {
+        "vlucas/phpdotenv": "^3.6",
+        "monolog/monolog": "2.0.0"
+    }
+}
