@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="de-de">
+
+<head>
+<?php echo $this->runChild('Partials.Head',['page'=>$titel]); ?>
+
+</head>
+
+<body>
+<?php echo $this->runChild('Partials.Header'); ?>
+<div class="container">
+ <div class="row">
+ <div class="col-sm-12">
+ <table class="table">
+
+ <thead>
+ <tr>
+ <th scope="col" class="col-4">Zutaten</th>
+ <th scope="col" class="col-2">Vegan?</th>
+ <th scope="col" class="col-2">Vegetarisch?</th>
+ <th scope="col" class="col-2">Glutenfrei?</th>
+ </tr>
+ </thead>
+ <tbody>
+ <?php $__currentLoopData = $sorted_list; $this->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $this->incrementLoopIndices(); $loop = $this->getFirstLoop(); ?>
+ <tr>
+ <td>
+ <a data-toggle="tooltip" data-placement="bottom" title="Suchen Sie nach <?php echo static::e($row['Name']); ?> im Web"
+ target=”_blank” href="http://www.google.com/search?q= <?php echo static::e($row['Name']); ?>"> <?php echo static::e($row['Name']." "); ?>
+
+ <?php if($row['Bio']): ?> <img src="img/bio.png"  title="Bio" alt="Bioabzeichen"/> <?php endif; ?> </a>
+ </td>
+ <td><?php if($row['Vegan']): ?> <i class="far fa-check-circle"></i> <?php else: ?> <i class="far fa-circle"></i> <?php endif; ?></td>
+ <td><?php if($row['Vegetarisch']): ?> <i class="far fa-check-circle"></i> <?php else: ?> <i class="far fa-circle"></i> <?php endif; ?></td>
+ <td><?php if($row['Glutenfrei']): ?> <i class="far fa-check-circle"></i> <?php else: ?> <i class="far fa-circle"></i> <?php endif; ?></td>
+ </tr>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ </tbody>
+ </table>
+ </div>
+ </div>
+</div>
+
+
+<?php echo $this->runChild("Partials.Footer"); ?>
+</body>
+
+</html>

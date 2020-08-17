@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="de-de">
+
+<head>
+ <?php echo $this->runChild('Partials.Head',['titel'=>"Log-In"]); ?>
+</head>
+
+<body>
+<?php echo $this->runChild('Partials.Header'); ?>
+<div class="container">
+ <?php if(!isset($_SESSION['logged_in']) || (isset($_SESSION['logged_in']) && $_SESSION['logged_in']==false)): ?>
+ <h2 class="text-uppercase mt-5 sign-in" style="text-align: center">Sign In</h2>
+ <form class="py-2 d-flex justify-content-center flex-column" method="post" action="Login.php">
+ <aside class="alert alert-success" role="alert"><?php if(isset($msg)): ?> <?php echo static::e($msg); ?> <?php endif; ?></aside>
+ <aside <?php if($flag): ?> class="alert alert-danger" role="alert"<?php endif; ?>><?php if($flag): ?> Es hat nicht geklapt, bitte versuchen Sie es erneut <?php endif; ?></aside>
+ <div class="form-group m-3">
+ <label for="username" <?php if($flag): ?> class="p-3 mb-2 bg-danger text-dark"<?php endif; ?>>Username</label>
+ <input name="username" type="text" class="form-control" <?php if($flag): ?> style="border:1px solid red"
+ <?php endif; ?>
+ id="username" placeholder="Enter Username" maxlength="50" required/></div>
+ <div class="form-group m-3">
+ <label for="password" <?php if($flag): ?> class="p-3 mb-2 bg-danger text-dark" <?php endif; ?>>Password</label>
+ <input name="password" type="password" class="form-control" <?php if($flag): ?>style="border:1px solid red"
+ <?php endif; ?>
+ id="password" placeholder="Enter Password" maxlength="50" required/></div>
+ <input type="hidden" id="submit" name="submit" value="true">
+ <input type="submit" class="btn btn-primary m-3 align-self-end" value="Sign In"/>
+ </form>
+ <?php else: ?>
+ <div class="container" align="center">
+ <h4 class="mt-5 lower_10px_padding">Hallo <?php echo static::e($_SESSION['username']); ?>, Sie sind
+ angemeldet als <?php echo static::e($_SESSION['role']); ?></h4>
+ <a href="logout.php" class="btn btn-info m-3 align">Logout</a>
+ </div>
+ <?php endif; ?>
+
+</div>
+<?php echo $this->runChild("Partials.Footer"); ?>
+</body>
+
+</html>

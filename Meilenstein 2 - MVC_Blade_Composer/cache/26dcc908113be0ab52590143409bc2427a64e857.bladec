@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="de-de">
+
+<head>
+ <?php echo $this->runChild('Partials.Head',['titel'=>"Log-In"]); ?>
+</head>
+
+<body>
+<?php echo $this->runChild('Partials.Header'); ?>
+<div class="container">
+
+ <div class="container" align="center">
+ <?php if(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true): ?>
+ <h4 class="mt-5 lower_10px_padding" style="text-align: center"><?php echo static::e($message); ?></h4>
+ <?php endif; ?>
+ <?php if(isset($_SESSION['logged_in']) & $_SESSION['logged_in']): ?>
+ <a href="logout.php" class="btn btn-info m-3 align" style="text-align:center">Logout</a>
+ <?php endif; ?>
+ </div>
+</div>
+<?php echo $this->runChild("Partials.Footer"); ?>
+</body>
+
+</html>

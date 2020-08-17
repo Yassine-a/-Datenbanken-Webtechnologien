@@ -1,0 +1,18 @@
+DB_HOST="149.201.88.110"
+DB_PASS="FUGBIL-KTY!"
+DB_USER="s_ya7167s"
+DB_PORT=3306
+DB_NAME="db3170834"
+\
+
+DB_HOST="localhost"
+DB_PASS=""
+DB_USER="root"
+DB_PORT=3306
+DB_NAME="db3170834"
+
+RewriteEngine On
+
+
+RewriteCond $1 !^{index\.php|controllers|core|css|fonts|views}
+RewriteRule ^([^/]+)/? index.php?url=$1 [L,QSA]
